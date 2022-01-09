@@ -1,0 +1,2353 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int  main()
+{
+    int score;
+    printf("Input Score:");
+    scanf("%d",&score);
+    if(score>=0 && score<60)
+        printf("不及格%d\n",score);
+    else if(score>=60 && score<70)
+        printf("及格%d\n",score);
+    else if(score>=70 && score<80)
+        printf("中等%d\n",score);
+    else if(score>=80 && score<90)
+        printf("良好%d\n",score);
+    else if(score>=90 && score<=100)
+        printf("优秀%d\n",score);
+    else
+        printf("输入错误！！！分数应在0~100范围！");
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int    year;
+	printf("Input score:");
+	scanf("%d", &year);  
+    for(year=2018;year<=2030;year++)
+    {
+
+    if((year%4==0 && year%100!=0) || year%400==0)
+       printf("%d是闰年\n",year);
+    }
+    system("pause");
+    return 0;
+}
+
+
+int main()
+{
+    int a,b;
+    a=2;
+    b=5;
+    if ((a>=1)&&(b++==5))
+        printf("True");
+    else
+        printf("false");
+    system("pause");
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main()
+{
+    float a, b, c;
+
+	printf("Input the three edge length:");
+	scanf("%f, %f, %f", &a, &b , &c);
+
+	if (a+b>c && b+c>a && a+c>b)	/*三角形的基本条件*/
+	{
+		if (a==b || b==c || c==a)
+			printf("等腰三角形");
+		else if (a*a+b*b==c*c || a*a+c*c==b*b || b*b+c*c==a*a)
+			printf("直角三角形");
+		else
+			printf("一般三角形");
+	}
+	else
+	{
+		printf("不是三角形\n");
+	}
+    return 0;
+}
+
+
+int main()
+{
+     int month;
+     printf("Input Month:");
+     scanf("%d",&month);
+     switch (month) {
+		case 1:
+			printf("January\n");
+			break;
+		case 2:
+			printf("February\n");
+			break;
+		case 3:
+			printf("March\n");
+			break;
+		default:
+			printf("Others\n");
+			break;
+	          }
+	 printf("End");
+
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#define EPS 1e-1
+int main()
+{   int flag=1;
+    float a, b, c;
+	printf("Input the three edge length:");
+	scanf("%f, %f, %f", &a, &b , &c);
+
+	if (a+b>c && b+c>a && a+c>b) /*三角形的基本条件*/
+	{
+		if (a==b && b==c && c==a)
+		{
+			printf("等边");
+			flag = 0;
+		}
+		else if (a==b || b==c || c==a)
+		{
+			printf("等腰");
+			flag = 0;
+		}
+
+		if (fabs(a*a+b*b-c*c)<=EPS || fabs(a*a+c*c-b*b)<=EPS || fabs(b*b+c*c-a*a)<=EPS)
+		{
+			printf("直角");
+			flag = 0;
+		}
+		if (flag)
+			printf("一般");
+		printf("三角形\n");
+	}
+	else
+		printf("不是三角形\n");
+
+
+
+
+    return 0;
+}
+
+
+int main()
+{
+    float a, b, c;
+	printf("Input the three edge length:");
+	scanf("%f, %f, %f", &a, &b , &c);
+
+	if (a+b>c && b+c>a && a+c>b) /*三角形的基本条件*/
+	{
+
+        if (a==b || b==c || c==a)
+			printf("等腰");
+        if (fabs(a*a+b*b-c*c)<=EPS || fabs(a*a+c*c-b*b)<=EPS || fabs(b*b+c*c-a*a)<=EPS)
+			printf("直角");
+        else
+        	printf("一般");
+		printf("三角形\n");
+	}
+	else
+		printf("不是三角形\n");
+
+
+
+
+    return 0;
+}
+
+
+/*
+【程序37】 百元买百鸡
+* 题目：我国古代数学家张丘建在他的算经中提出了一个著名的“百钱买百鸡”问题：鸡翁一，值钱五；鸡母一，值钱三；鸡雏三，值钱一。百钱买百鸡，问翁、母、雏各几何？
+* 程序分析： 首先确定每种鸡的范围：公鸡（0-20），母鸡（0-33），鸡雏（0-100），再在范围内穷举。 */
+
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int i,j,k;
+    for(i=0; i<=20; i++)
+	{
+		for(j=0; j<=33; j++)
+		{
+			for(k=0; k<=100; k++)
+			{
+				if (i*5+j*3+k/3 == 100 && i+j+k == 100 && k%3 == 0)
+					printf("公鸡：%d 母鸡：%d 鸡雏：%d\n", i, j, k);
+			}
+		}
+	}
+    return 0;
+}
+
+
+int main()
+{
+    int i, sum, n;
+    sum = 0;
+    printf("Input n:");
+    scanf("%d",&n);
+    for (i = 1; i <=n; i++)
+    {
+        sum = sum + i;
+        printf("i=%d,sum=%d\n",i,sum);
+    }
+    printf("sum=%d\n",sum);
+    return 0;
+}
+
+
+int main()
+{
+    int i, sum, n;
+    sum = 0;
+    printf("Input n:");
+    scanf("%d",&n);
+    i=1;
+    while(i<=n)
+    {
+        sum = sum + i;
+        i++;
+        printf("i=%d,sum=%d\n",i,sum);
+    }
+    printf("sum=%d\n",sum);
+    return 0;
+}
+
+
+int main()
+{
+    int i, sum, n;
+    sum = 0;
+    printf("Input n:");
+    scanf("%d",&n);
+    i=1;
+    do
+    {
+        sum = sum + i;
+        i++;
+        printf("i=%d,sum=%d\n",i,sum);
+    }while(i<=n);
+    printf("sum=%d\n",sum);
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{
+    int  magic;
+	int  guess;
+	int  counter;             /*记录人猜次数的计数器变量*/
+ /*   unsigned int seed;
+    printf("Please enter seed:");
+	scanf("%u", &seed);
+	srand(seed); */
+	srand(time(NULL));
+	magic = rand() % 100 + 1;
+	printf("%d\n",magic);
+	counter = 0;              /*计数器变量count初始化为0*/
+	do{
+		printf("Please guess a magic number:");
+		scanf("%d", &guess);
+		counter ++;                 /*计数器变量count加1*/
+		if (guess > magic)
+		    printf("Wrong! Too high!\n");
+		else if (guess < magic)
+		    printf("Wrong! Too low!\n");
+       else
+           printf("Right!\n");
+	}while (guess != magic);
+	printf("counter = %d \n", counter);
+	return 0;
+
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{
+    long int t;
+    t=time(NULL);
+    printf("%ld\n",t);
+    printf("%ld\n",t/3600/24/365+1970);
+    return 0;
+}
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i;
+    srand(1100);
+    for(i = 0; i <10;i++){
+        printf("%d\n",rand()%100+1);
+    }
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i,j,n;
+    long term,sum=0;
+    printf("Input n:");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        term=1;
+        for(j=1;j<=i;j++)
+        {
+            term=term*j;
+        }
+        if(i!=n)
+            printf("%d!+",i);
+        else
+            printf("%d!",i);
+        sum=sum+term;
+
+    }
+    printf("=%ld\n",sum);
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i,j,n;
+    long term,sum=0;
+    printf("Input n:");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        term=1;
+        for(j=1;j<=i;j++)
+        {
+            term=term*j;
+        }
+        printf("%d!+",i);
+        sum=sum+term;
+
+    }
+    printf("%c=%ld\n",8,sum);
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{
+    int m,sign=1;
+    double i=1.0, term=1,sum=0;
+    printf("Input m:");
+    scanf("%d",&m);
+    while(i<=m)
+    {
+     sum=sum+term;
+     sign=-sign;
+     i++;
+     term=sign/i;
+
+    }
+    printf("%10.8f\n",sum);
+    return 0;
+}
+
+int main()
+{
+       int i,j,n;
+    long term,sum=0;
+    printf("Input n:");
+    scanf("%d",&n);
+    for(i=3;i<=n;i=i+3)
+    {
+        term=1;
+        for(j=1;j<=i;j++)
+        {
+            term=term*j;
+        }
+        printf("%d!+",i);
+        sum=sum+term;
+
+    }
+    printf("%c=%ld\n",8,sum);
+    return 0;
+}
+
+功能：求一个四位数的各位数字的立方和。
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{
+    int i,n,sum=0;
+    printf("Input n:");
+    scanf("%d",&n);
+    for(i=1;i<=4;i++)
+    {
+        sum=sum+n%10;
+        n=n/10;
+    }
+    printf("%d\n",sum);
+    return 0;
+}
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{
+    int n,sum=0;
+    printf("Input n:");
+    scanf("%d",&n);
+    while(n)
+    {
+        sum=sum+n%10;
+        n=n/10;
+    }
+    printf("%d\n",sum);
+    return 0;
+}
+
+——————————————————————————
+函数
+----------------------------------
+#include<stdio.h>
+void Move();								/*声明搬运函数*/
+void Build();								/*声明建盖函数*/
+void Paint();								/*声明粉刷函数*/
+int main()
+{
+    Move();								/*执行搬运函数*/
+    Build();								/*执行建盖函数*/
+    Paint();								/*执行粉刷函数*/
+    return 0;								/*程序结束*/
+}
+/*						执行搬运功能					*/
+void Move()
+{
+    printf("----------------------\n");
+    printf("*****执行搬运功能*****\n");
+    printf("----------------------\n");
+}
+/*						执行建盖功能					*/
+void Build()
+{
+    printf("----------------------\n");
+    printf("*****执行建盖功能*****\n");
+    printf("----------------------\n");
+}
+/*						执行粉刷功能					*/
+void Paint()
+{
+    printf("----------------------\n");
+    printf("*****执行粉刷功能*****\n");
+    printf("----------------------\n");
+}
+
+----------------------------------------------------------------------
+
+#include<stdio.h>
+int mul(int x,int y) 								
+    int z;
+    z=x*y;
+    return z; 									
+main()
+{
+    int a,b,c;
+    printf("请输入a和b:\n");
+    scanf("%d,%d",&a,&b);
+    c=mul(a,b); 								
+    printf("a和b的乘积是:%d\n",c);
+}
+
+------------------------------------------
+#include<stdio.h>
+int hf(int,int);
+int ld(int,int,int);
+main()
+{
+    int u, v, h, l;									/*声明变量*/
+    printf("请输入两个整数:\n");					/*输出字符串*/
+    scanf("%d%d",&u,&v);							/*输入两个整数*/
+    h=hf(u,v);									/*调用求最大公约数的自定义函数*/
+    l=ld(u,v,h);									/*调用求最小公倍数的自定义函数*/
+    printf("最大公约数为： %d\n",h);				/*输出最大公约数*/
+    printf("最小公倍数为： %d\n",l);					/*输出最小公倍数*/
+}
+int hf(int u,int v)
+{
+    int t,r;										/*声明两个变量*/
+    if(v>u)									/*判断两个数大小*/
+    {t=u;u=v;v=t;}								/*使u大于v*/
+    while((r=u%v)!=0)							/*求最大公约数*/
+    {
+        u=v;
+        v=r;
+    }
+    return(v);									/*返回最大公约数*/
+}
+int ld(int u,int v, int h)
+{
+    return(u*v/h);								/*求最小公倍数*/
+}
+
+------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+int isprime(int x)
+{
+    int flag=1,i;
+    for(i=2;i<=x-1;i++)
+    {
+        if(x%i==0)
+        {
+            flag=0;
+            break;
+        }
+
+     }
+     return(flag);
+}
+int main()
+{
+        int n;
+        printf("Input n:");
+        scanf("%d",&n);
+        if(isprime(n))
+           printf("%d是素数\n",n);
+        else
+            printf("%d不是是素数\n",n);
+        return 0;
+
+}
+
+#include<stdio.h>
+int main()
+{
+    int fac(int n);
+    int n;
+    int y;
+    printf("input a integer number:");
+    scanf("%d",&n);
+    y=fac(n);
+    printf("%d!=%d\n",n,y);
+    return 0;
+}
+int fac(int n)
+{
+    int f;
+    if(n<0)
+        printf("n<0,data error!");
+    else if(n==0||n==1)
+        f=1;
+    else
+        f=fac(n-1)*n;
+    return(f);
+}
+
+---------------------------------
+#include <stdio.h>
+long Fact(int n);
+int main()
+{
+	int m;
+	long ret;
+	printf("Input m:");
+	scanf("%d",&m);
+	ret=Fact(m);
+	printf("%d!=%ld\n",m,ret);
+	return 0;
+
+}
+
+long Fact(int n)
+{
+	int i;
+	long result =1;
+	for(i=2;i<=n;i++)
+		result*=i;
+	return result;	
+}
+
+------------------------------------------
+#include <stdio.h>
+long Fact(int n);
+int main()
+{
+	int m;
+	long ret;
+	for(;;)
+    {
+
+	printf("Input m:");
+	scanf("%d",&m);
+	ret=Fact(m);
+	if(ret==-1)
+    {
+        printf("Input Error!\n");
+        continue;
+    }
+
+    else
+        {
+                printf("%d!=%ld\n",m,ret);
+                break;
+        }
+    }
+	return 0;
+
+}
+
+long Fact(int n)
+{
+	int i;
+	long result =1;
+	if(n<0)
+        return -1;
+    else
+	    for(i=2;i<=n;i++)
+            result*=i;
+	return result;
+}
+
+/*sy6-1*/
+
+#include <stdio.h>
+#include <stdlib.h>
+long Fact(int n);
+long SumFact(int n);
+int main()
+{
+	int m;
+	long ret,sumret;
+	printf("sy6_1:李明杰\n");
+	for(;;)
+    {
+
+	printf("请输入一个整数 m:");
+	scanf("%d",&m);
+	ret=Fact(m);
+	sumret=SumFact(m);
+	if(ret==-1)
+    {
+        printf("输入错误，请重新输入！!\n");
+        continue;
+    }
+    else
+        {
+                printf("%d!=%ld\n",m,ret);
+                printf("1!+2!+...%d!=%ld\n",m,sumret);
+                break;
+        }
+    }
+	system("pause");
+	return 0;
+}
+
+long Fact(int n)
+{
+	/*n<0返回-1，否则计算n!*/
+	int i;
+	long result =1;
+	if(n<0)
+        return -1;
+    else
+	    for(i=2;i<=n;i++)
+            result*=i;
+	return result;
+}
+
+long SumFact(int n)
+{
+    /* 调用自定义函数Fact*/
+    int i;
+    long sum=0;
+    for(i=1;i<=n;i++)
+    {
+        sum+=Fact(i);
+    }
+    return(sum);
+}
+
+
+
+/*sy6-2*/
+#include <stdio.h>
+#include <stdlib.h>
+float Ave(float,float);
+int main()
+{
+	float x,y,aver;
+	printf("sy6_1:李明杰\n");
+	printf("请输入一个两个数 :");
+	scanf("%f,%f",&x,&y);
+	aver=Ave(x,y);
+	printf("两个数的平均值是%10.2f:",aver);
+
+	system("pause");
+	return 0;
+}
+
+float Ave(float x,float y)
+{
+	float result;
+        result=(x+y)/2;
+	return result;
+}
+
+--------------------------------------------
+#include <stdio.h>
+long Func(int n);
+int main()
+{
+	int i;
+	i=Func(2);
+	printf("%d\n",i);
+	i=Func(4);
+	printf("%d\n",i);
+	return 0;
+}
+long Func(int n)
+{
+	static long p=2 ; 		/*初始化赋值*/
+	p = p * n;
+	return p;
+}
+
+------------------------------------------------------
+全局变量另外文件的调用
+-----------------------------------------------------
+#include <stdio.h>
+#include "test.c"
+extern long result;
+int main()
+{
+	long i;
+	i=Fact(10);
+	printf("%ld\n",i);
+	test();
+	printf("%ld\n",result);
+	return 0;
+}
+
+
+#include <stdio.h>
+#include "test.c"
+/*extern long Func(int n); */
+int main()
+{
+	long i;
+	i=Func(2);
+	printf("%ld\n",i);
+	
+	return 0;
+}
+
+--------------------------------------------
+数组
+--------------------------------------------
+#include <stdio.h>
+int main()
+ {  int i,a[10];
+     for (i=0; i<=9;i++)
+         a[i]=i;
+     for(i=9;i>=0; i--)
+         printf("%d ",a[i]);
+     printf("\n");
+     return 0;
+ }
+------------------------------------
+#include <stdio.h>
+int main()
+ {  int i;  int f[20]={1,1};
+     for(i=2;i<20;i++)
+         f[i]=f[i-2]+f[i-1];
+     for(i=0;i<20;i++)
+    {   if(i%5==0) printf("\n");
+         printf("%12d",f[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+------------------------------------
+输入分数求和和平局及超过平均人数
+-------------------------------------
+#include <stdio.h>
+int main()
+ {  int i,count=0,sum=0;
+    float score[5],aver;
+     for(i=0;i<=4;i++)
+    {
+         printf("Input Score:");
+         scanf("%f",&score[i]);
+         sum=sum+score[i];
+    }
+    aver=sum/5;
+    printf("sum=%d,aver=%6.2f\n",sum,aver);
+    for(i=0;i<=4;i++)
+        if(score[i]>=aver) count++;
+    printf("Over Aver Count:%d",count);
+    return 0;
+}
+
+-------------------------------------------------
+数组越界赋值带来后果
+--------------------------------------------
+#include <stdio.h>
+int main()
+{
+    int a = 1, c = 2, b[5] = {0}, i;
+    printf("%p, %p, %p\n", b, &c, &a);
+    for (i=0; i<=8; i++)
+    {
+         b[i] = i;
+         printf("%d  ", b[i]);
+    }
+    printf("\nc=%d, a=%d, i=%d\n", c, a, i);
+    return 0;
+}
+
+------------------------------------------
+输入10个整数，按逆序输出
+---------------------------------------
+#include <stdio.h>
+int main( )
+{
+	int a[10], left, right, t;
+	for (t=0; t<10; t++)
+		scanf("%d", &a[t]);
+	for (left=0, right=9; left<right; left++, right--)
+	{
+		t=a[left];
+		a[left]=a[right];
+		a[right]=t;
+	}
+	for (t=0; t<10; t++) printf("%d",  a[t]);
+	return 0;
+}
+
+
+-----------------------------------------
+选择法-把最大数放在第一位
+-------------------------------------------
+#include <stdio.h>
+int main() /*选择法*/
+{
+    int j,score[5],k,temp;
+    printf("请输入原数组：\n");
+    for(j=0;j<5;j++)
+        scanf("%d",&score[j]);
+    k=0;
+    for(j=1; j<5; j++)
+        if (score[j] > score[k])
+            k = j;             
+    
+    if (k != 0)             
+    {
+	   	temp = score[k];
+        score[k] = score[0];
+	  	score[0] = temp;
+
+    }
+    printf("\n");
+    for(j=0;j<5;j++)
+        printf("%d\n",score[j]);
+    system
+    return 0;
+}
+
+
+----------------------------------------------------
+选择法排序
+-----------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+int main() /*选择法*/
+{
+    int i,j,score[10],k,temp;
+    printf("请输入原数组：\n");
+    for(j=0;j<10;j++)
+        scanf("%d",&score[j]);
+    for (i=0; i<9; i++)
+    {
+        k = i;
+        for (j=i+1; j<10; j++)
+          if (score[j] > score[k])
+             k = j;              /*记录最大数下标位置*/
+
+        if (k != i)              /*若最大数不在下标位置i*/
+        {
+	      	temp = score[k];
+            score[k] = score[i];
+	      	score[i] = temp;
+
+        }
+    }
+    for(j=0;j<10;j++)
+        printf("%d,",score[j]);
+    system("pause");
+    return 0;
+}
+
+-------------------------------------------------------------
+冒泡排序法
+------------------------------------------------------------
+#include <stdio.h>
+int main()
+ {
+    int a[10];   int i,j,t;
+    printf("input 10 numbers :\n");
+    for (i=0;i<10;i++)
+        scanf("%d",&a[i]);
+    printf("\n");
+    for(j=0;j<9;j++)
+        for(i=0;i<9-j;i++)
+            if (a[i]>a[i+1])
+                { t=a[i];a[i]=a[i+1];a[i+1]=t; }
+    printf("the sorted numbers :\n");
+    for(i=0;i<10;i++)  printf("%d ",a[i]);
+    printf("\n");
+
+    return 0;
+}
+
+---------------------------------------------------
+#include <stdio.h>
+#define N 40
+int Average(int score[], int n);     /* Average()函数原型 */
+void ReadScore(int score[], int n); /* ReadScore()函数原型 */
+int main()
+{
+	int score[N], aver, n;
+	printf("Input n:");
+	scanf("%d", &n);
+	ReadScore(score, n);          /* 数组名作为函数实参调用函数ReadScore() */
+	aver = Average(score, n);    /* 数组名作为函数实参调用函数Average() */
+	printf("Average score is %d\n",aver);
+	return 0;
+}
+/* 函数功能： 计算n个学生成绩的平均分 */
+int Average(int score[], int n) /* Average()函数定义 */
+{
+	int i, sum = 0;
+	for (i=0; i<n; i++)
+	{
+		sum += score[i];
+	}
+	return  sum / n;
+}
+/* 函数功能：输入n个学生的某门课成绩 */
+void ReadScore(int score[], int n)  /* ReadScore()函数定义 */
+{
+	int i;
+	printf("Input score:");
+	for (i=0; i<n; i++)
+	{
+		scanf("%d", &score[i]);
+	}
+}
+----------------------------------------------------------------
+选择法+数组函数
+--------------------------------------------------------------
+#include <stdio.h>
+#define N 40
+int ReadScore(int score[]);           /* ReadScore()函数原型 */
+void DataSort(int score[], int n);   /* DataSort()原函数型 */
+void PrintScore(int score[], int n); /* PrintScore()函数原型 */
+int main()
+{
+	int score[N], n;
+	n = ReadScore(score);      /*调用函数ReadScore()输入成绩，返回学生人数*/
+	printf("Total students are %d\n", n);
+	DataSort(score, n);        /* 调用函数DataSort()进行成绩排序 */
+	printf("Sorted scores:");
+	PrintScore(score, n);      /* 调用函数Printscore()输出成绩排序结果 */
+	return 0;
+}
+/* 函数功能：输入学生某门课的成绩，当输入负值时，结束输入，返回学生人数 */
+int ReadScore(int score[])     /* ReadScore()函数定义 */
+{
+	int i = -1; /* i初始化为-1，可保证循环体内i增1后数组下标从0开始 */
+	do{
+		i++;
+		printf("Input score:");
+		scanf("%d", &score[i]);
+	}while (score[i] >= 0);   /* 输入负值时结束成绩输入 */
+	return i;                    /* 返回学生人数 */
+}
+/* 函数功能：按选择法将数组score的元素值元素按从高到低排序 */
+void DataSort(int score[], int n)
+{
+	int i, j, k, temp;
+	for (i=0; i<n-1; i++)
+	{
+		k = i;
+		for (j=i+1; j<n; j++)
+		{
+			if (score[j] > score[k])
+			{
+				k = j;/*记录最大数下标位置*/
+			}
+		}
+		if (k != i) /*若最大数不在下标位置i*/
+		{
+			temp = score[k];
+			score[k] = score[i];
+			score[i] = temp;
+		}
+	}
+}
+
+/* 函数功能： 打印学生成绩 */
+void PrintScore(int score[], int n) /* PrintScore()函数定义 */
+{
+	int i;
+	for (i=0; i<n; i++)
+	{
+		printf("%4d,", score[i]);
+	}
+	printf("\n");
+}
+
+
+----------------------------------------------------------------
+交换法+数组函数
+--------------------------------------------------------------
+#include <stdio.h>
+#define N 40
+int ReadScore(int score[]);           /* ReadScore()函数原型 */
+void DataSort(int score[], int n);   /* DataSort()原函数型 */
+void PrintScore(int score[], int n); /* PrintScore()函数原型 */
+int main()
+{
+	int score[N], n;
+	n = ReadScore(score);      /*调用函数ReadScore()输入成绩，返回学生人数*/
+	printf("Total students are %d\n", n);
+	DataSort(score, n);        /* 调用函数DataSort()进行成绩排序 */
+	printf("Sorted scores:");
+	PrintScore(score, n);      /* 调用函数Printscore()输出成绩排序结果 */
+	return 0;
+}
+/* 函数功能：输入学生某门课的成绩，当输入负值时，结束输入，返回学生人数 */
+int ReadScore(int score[])     /* ReadScore()函数定义 */
+{
+	int i = -1; /* i初始化为-1，可保证循环体内i增1后数组下标从0开始 */
+	do{
+		i++;
+		printf("Input score:");
+		scanf("%d", &score[i]);
+	}while (score[i] >= 0);   /* 输入负值时结束成绩输入 */
+	return i;                    /* 返回学生人数 */
+}
+/* 函数功能：按交换法将数组score的元素值元素按从高到低排序 */
+void DataSort(int score[], int n) /* DataSort()函数定义 */
+{
+	int i, j, temp;
+	for (i=0; i<n-1; i++)
+	{
+		for (j=i+1; j<n; j++)
+		{
+			if (score[j] > score[i]) /* 按数组score的元素值从高到低排序 */
+			{
+				temp = score[j];
+				score[j] = score[i];
+				score[i] = temp;
+			}
+		}
+	}
+}
+/* 函数功能： 打印学生成绩 */
+void PrintScore(int score[], int n) /* PrintScore()函数定义 */
+{
+	int i;
+	for (i=0; i<n; i++)
+	{
+		printf("%4d,", score[i]);
+	}
+	printf("\n");
+}
+
+------------------------------------------------------------------------
+顺序查找
+------------------------------------------------------------------------
+#include <stdio.h>
+#define N 40
+int ReadScore(int score[], long num[]);          /*ReadScore()函数原型*/
+int LinSearch(long num[], long x, int n);        /* LinSearch()原函数型*/
+int main()
+{
+	int score[N], n, pos;
+	long num[N], x;
+	n = ReadScore(score, num);  /* 输入成绩和学号，返回学生总数 */
+	printf("Total students are %d\n", n);
+	printf("Input the searching ID:");
+	scanf("%ld", &x);          	 /* 以长整型格式从键盘输入待查找的学号x */
+	pos = LinSearch(num, x, n); /* 查找学号为num的学生 */
+	if (pos != -1)              	 /* 若找到，则打印其分数 */
+	{
+		printf("score = %d\n", score[pos]);
+	}
+	else                      		/* 若未找到，则打印"未找到"提示信息*/
+	{
+		printf("Not found!\n");
+	}
+	return 0;
+}
+/* 函数功能：输入学生的学号及其某门课成绩，当输入负值时，结束输入，返回学生人数 */
+int ReadScore(int score[], long num[]) /* ReadScore()函数定义 */
+{
+	int i = -1;         /*i初始化为-1，循环体内增1后可保证数组下标从0开始*/
+	do{
+		i++;
+		printf("Input student's ID and score:");
+		scanf("%ld-%d", &num[i], &score[i]);
+	} while (num[i] >0 && score[i] >= 0); /* 输入负值时结束成绩输入 */
+	return i;                                   /* 返回学生总数 */
+}
+/*按线性查找法查找值为x的数组元素，若找到则返回x在数组中的下标位置，否则返回-1*/
+int LinSearch(long num[], long x, int n) /* LinSearch()函数定义 */
+{
+	int  i;
+	for (i=0; i<n; i++)
+	{
+		if (num[i] == x)	return (i); /* 若找到则返回x在数组中的下标 */
+	}
+	return (-1);                           /* 若循环结束仍未找到，则返回-1 */
+}
+
+-----------------------------------------------------------------------------------
+折半查找
+---------------------------------------------------------------------------------
+#include <stdio.h>
+#define N 40
+int ReadScore(int score[], long num[]);          /*ReadScore()函数原型*/
+int BinSearch(long num[], long x, int n);        /*BinSearch()原函数型*/
+int main()
+{
+	int score[N], n, pos;
+	long num[N], x;
+	n = ReadScore(score, num);  /* 输入成绩和学号，返回学生总数 */
+	printf("Total students are %d\n", n);
+	printf("Input the searching ID:");
+	scanf("%ld", &x);          	 /* 以长整型格式从键盘输入待查找的学号x */
+	pos = BinSearch(num, x, n); /* 查找学号为num的学生 */
+	if (pos != -1)              	 /* 若找到，则打印其分数 */
+	{
+		printf("score = %d\n", score[pos]);
+	}
+	else                      		/* 若未找到，则打印"未找到"提示信息*/
+	{
+		printf("Not found!\n");
+	}
+	return 0;
+}
+/* 函数功能：输入学生的学号及其某门课成绩，当输入负值时，结束输入，返回学生人数 */
+int ReadScore(int score[], long num[]) /* ReadScore()函数定义 */
+{
+	int i = -1;         /*i初始化为-1，循环体内增1后可保证数组下标从0开始*/
+	do{
+		i++;
+		printf("Input student's ID and score:");
+		scanf("%ld-%d", &num[i], &score[i]);
+	} while (num[i] >0 && score[i] >= 0); /* 输入负值时结束成绩输入 */
+	return i;                                   /* 返回学生总数 */
+}
+/*按折半查找法查找值为x的数组元素，若找到则返回x在数组中的下标位置，否则返回-1*/
+int BinSearch(long num[], long x, int n) /*BinSearch()函数定义*/
+{
+	int  low, high, mid;
+	low = 0;                     /* 区间左端点置为0 */
+	high = n - 1;              	/* 区间右端点置为n-1 */
+	while (low <= high)      	/* 若左端点小于等于右端点，则继续查找 */
+	{
+		mid = (high + low) / 2;/* 取数据区间的中点 */
+		if (x > num[mid])
+		{
+			low = mid + 1;   /* 若x>num[mid]，则修改区间的左端点 */
+		}
+		else  if (x < num[mid])
+		{
+			high = mid - 1;  /* 若x<num[mid]，则修改区间的右端点 */
+		}
+		else
+		{
+			return (mid);   	 /* 若找到，则返回下标值mid */
+		}
+	}
+	return(-1);                  /* 循环结束仍未找到，则返回值-1 */
+}
+
+
+----------------------------------------------------------------
+二维数组对角线元素之和
+----------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+    int i, j, sum;									/*定义整型变量*/
+    int a[4][4]={								/*定义整型数组，并对其初始化*/
+        {1,2,3,4},
+        {5,6,7,8},
+        {9,10,11,12},
+        {13,14,15,16}
+    };
+    sum=0;									/*为整型变量赋初值*/
+    printf("这个数组是:\n");						/*输出提示信息*/
+    for(i=0;i<4;i++)								/*循环嵌套输出对角线之和*/
+    {
+        for(j=0;j<4;j++)
+        {
+            printf("%5d",a[i][j]);
+            if(i==j)
+                sum=sum+a[i][j];
+        }
+        printf("\n");
+    }
+    printf("对角线之和是： %d\n",sum);
+    return 0;
+}
+------------------------------------------------
+数组名做函数参数
+-----------------------------------------------
+#include<stdio.h>
+void  Evaluate(int iArrayName[10]);				/*声明赋值函数*/
+void  Display(int iArrayName[10]);				/*声明显示函数*/
+int main()
+{
+    int iArray[10];							/*定义一个具有10个元素的整型数组*/
+    
+    Evaluate(iArray[10]);						/*调用函数进行赋值操作，将数组名作为参数*/
+    Display(iArray[10]);						/*调用函数进行赋值操作，将数组名作为参数*/
+    return 0;
+}
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*						数组元素的显示						*/
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+void  Display(int iArrayName[10])
+{
+    int i;									/*定义整型变量*/
+    for(i=0;i<10;i++)						/*执行循环的语句*/
+    {									/*在循环语句中执行输出操作*/
+        printf("显示的元素是：%d\n",iArrayName[i]);
+    }
+}
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*						进行数组元素的赋值						*/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+void  Evaluate(int iArrayName[10])
+{
+    int i;									/*定义整型变量*/
+    for(i=0;i<10;i++)						/*执行循环语句*/
+    {									/*在循环语句中执行赋值操作*/
+        iArrayName[i]=i;
+    }
+}
+
+-----------------------------------------------------
+可变长数组名做函数参数
+------------------------------------------------
+#include<stdio.h>
+void  Evaluate(int iArrayName[]);				/*声明函数，参数为可变长度数组*/
+void  Display(int iArrayName[]);					/*声明函数，参数为可变长度数组*/
+int main()
+{
+    int iArray[10];							/*定义一个具有10个元素的整型数组*/
+    
+    Evaluate(iArray[10]);						/*调用函数进行赋值操作，将数组名作为参数*/
+    Display(iArray[10]);						/*调用函数进行赋值操作，将数组名作为参数*/
+    return 0;
+}
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*						数组元素的显示						*/
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+void  Display(int iArrayName[])					/*定义函数，参数为可变长度数组*/
+{
+    int i;									/*定义整型变量*/
+    for(i=0;i<10;i++)							/*执行循环的语句*/
+    {									/*在循环语句中执行输出操作*/
+        printf("the member number is %d\n",iArrayName[i]);
+    }
+}
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*						进行数组元素的赋值						*/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+void  Evaluate(int iArrayName[])					/*定义函数，参数为可变长度数组*/
+{
+    int i;									/*定义整型变量*/
+    for(i=0;i<10;i++)							/*执行循环语句*/
+    {									/*在循环语句中执行赋值操作*/
+        iArrayName[i]=i;
+    }
+}
+
+-----------------------------------------------
+/*三个数由大到小排序*/
+----------------------------------------------
+
+#include<stdio.h>
+void swap(int *p1, int *p2) 							/*自定义交换函数*/
+{
+    int temp;
+    temp =  *p1;
+    *p1 =  *p2;
+    *p2 = temp;
+}
+void exchange(int *pt1, int *pt2, int *pt3) 				/*三个数由大到小排序*/
+{
+    if (*pt1 <  *pt2)
+        swap(pt1, pt2); 							/*调用swap函数*/
+    if (*pt1 <  *pt3)
+        swap(pt1, pt3);
+    if (*pt2 <  *pt3)
+        swap(pt2, pt3);
+}
+main()
+{
+    int a, b, c,  *q1,  *q2,  *q3;
+    puts("请输入三个您想要比较大小的整数:");
+    scanf("%d,%d,%d", &a, &b, &c);
+    q1 = &a; 									/*将变量a地址赋给指针变量q1*/
+    q2 = &b;
+    q3 = &c;
+    exchange(q1, q2, q3); 							/*调用exchange函数*/
+    printf("将三个数由大到小的顺序输出为:");
+    printf("\n%d,%d,%d\n", a, b, c);
+}
+ 
+
+-------------------------------------------------
+使用指针变量在屏幕上显示变量的地址值
+--------------------------------------------------
+#include <stdio.h>
+int main()
+{
+	int  a = 0, b = 1;
+	char c = 'A';
+    int *pa, *pb;        /* 定义了可以指向整型数据的指针变量pa和pb */
+    char *pc;             /* 定义了可以指向字符型数据的指针变量pc */
+	printf("a is %d, &a is %p, pa is %p\n", a, &a, pa);
+	printf("b is %d, &b is %p, pb is %p \n", b, &b, pb);
+	printf("c is %c, &c is %p, pc is %p \n", c, &c, pc);
+	return 0;
+}
+
+------------------------------------------------
+#include <stdio.h>
+int main()
+{
+	int  a = 0, b = 1;
+	char c = 'A';
+    int *pa = NULL, *pb = NULL; /* 定义指针变量并用NULL对其初始化 */
+    char *pc = NULL;              /* 定义指针变量并用NULL对其初始化 */
+	printf("a is %d, &a is %p, pa is %p\n", a, &a, pa);
+	printf("b is %d, &b is %p, pb is %p \n", b, &b, pb);
+	printf("c is %c, &c is %p, pc is %p \n", c, &c, pc);
+	return 0;
+}
+
+-------------------------------------------------------------
+#include <stdio.h>
+int main()
+{
+	int  a = 0, b = 1;
+	char c = 'A';
+    int *pa, *pb;       /* 定义指针变量pa和pb */
+    char *pc;            /* 定义指针变量pc */
+    pa = &a;             /* 初始化指针变量pa使其指向a */
+    pb = &b;             /* 初始化指针变量pb使其指向b */
+    pc = &c;             /* 初始化指针变量pc使其指向c */
+	printf("a is %d, &a is %p, pa is %p, &pa is %p\n", a, &a, pa, &pa);
+	printf("b is %d, &b is %p, pb is %p, &pb is %p\n", b, &b, pb, &pb);
+	printf("c is %c, &c is %p, pc is %p, &pc is %p\n", c, &c, pc, &pc);
+	return 0;
+}
+-------------------------------------------------------------------
+【例9.4】演示按值调用
+-------------------------------------------------------------------
+#include <stdio.h>
+void Fun(int par);
+int main()
+{
+	int arg = 1 ;
+	printf("arg = %d\n", arg);
+	Fun(arg);                            /* 传递实参值的拷贝给函数 */
+	printf("arg = %d\n", arg);
+	return 0;
+}
+void Fun(int par)
+{
+	printf("par = %d\n", par);
+	par = 2;                             /* 改变形参的值 */
+}
+
+--------------------------------------------------------
+【例9.5】演示按地址调用
+---------------------------------------------------
+#include <stdio.h>
+void Fun(int *par);
+int main()
+{
+	int arg = 1 ;
+	printf("arg = %d\n", arg);
+	Fun(&arg);                            /* 传递变量arg的地址值给函数 */
+	printf("arg = %d\n", arg);
+	return 0;
+}
+void Fun(int *par)
+{
+	printf("par = %d\n", *par);       /* 输出形参指向的变量的值 */
+	*par = 2;                             /* 改变形参指向的变量的值 */
+}
+
+-----------------------------------------------------
+例9.6：编写函数实现两数的互换-error
+------------------------------------------------
+#include  <stdio.h>
+void  Swap(int x, int y);
+int main()
+{
+	int  a, b;
+	printf("Please enter a,b:");
+	scanf("%d,%d", &a, &b);              
+	printf("Before swap: a = %d, b = %d\n", a, b);/* 打印交换前的a,b */
+	Swap(a, b);                                      /* 按值调用函数Swap() */
+	printf("After swap: a = %d, b = %d\n", a, b);/* 打印交换后的a,b */
+	return 0;
+}
+void  Swap(int x, int y)                
+{
+	int  temp;
+	temp = x;            /* 执行图9-5(b)中的步骤① */              
+	x = y;                /* 执行图9-5(b)中的步骤② */
+	y = temp;            /* 执行图9-5(b)中的步骤③ */
+}
+
+-----------------------------------------------------
+例9.6：编写函数实现两数的互换-地址参
+--------------------------------------------
+#include  <stdio.h>
+void  Swap(int *x, int *y);
+int main()
+{
+	int  a, b;
+	printf("Please enter a,b:");
+	scanf("%d,%d", &a, &b);              
+	printf("Before swap: a = %d, b = %d\n", a, b);/* 打印交换前的a,b */
+	Swap(&a, &b);                                  /* 按地址调用函数Swap() */
+	printf("After swap: a = %d, b = %d\n", a, b);/* 打印交换后的a,b */
+	return 0;
+}
+/* 函数功能：交换两个整型数的值 */
+void  Swap(int *x, int *y)                
+{
+	int  temp;
+	temp = *x;            /* 执行图9-6(b)中的步骤① */              
+	*x = *y;              /* 执行图9-6(b)中的步骤② */
+	*y = temp;            /* 执行图9-6(b)中的步骤③ */
+}
+
+------------------------------------------------------------
+例9.6：编写函数实现两数的互换-error2
+--------------------------------------------
+#include  <stdio.h>
+void  Swap(int *x, int *y);
+int main()
+{
+	int  a, b;
+	printf("Please enter a,b:");
+	scanf("%d,%d", &a, &b);
+	printf("Before swap: a = %d, b = %d\n", a, b);/* 打印交换前的a,b */
+	Swap(&a, &b);                                  /* 按地址调用函数Swap() */
+	printf("After swap: a = %d, b = %d\n", a, b);/* 打印交换后的a,b */
+	return 0;
+}
+/* 函数功能：交换两个整型数的值 */
+void  Swap(int *x, int *y)
+{
+	int  *temp;
+	temp = x;            /* 执行图9-6(b)中的步骤① */
+	x = y;              /* 执行图9-6(b)中的步骤② */
+	y = temp;            /* 执行图9-6(b)中的步骤③ */
+}
+-------------------------------------------
+【例9.7】计算并输出最高分及相应学生的学号-error
+-------------------------------------------
+#include  <stdio.h>
+#define  N  40
+void FindMax(int score[], long num[], int n, int pMaxScore, long pMaxNum); 
+int main()
+{
+	   int  score[N], maxScore;
+	   int    n, i;
+	   long   num[N], maxNum;
+	   printf("How many students?");
+	   scanf("%d", &n);    		                 /* 从键盘输入学生人数n */
+	   printf("Input student's ID and score:\n");
+	   for (i=0; i<n; i++)		
+	   {
+		   scanf("%ld%d", &num[i], &score[i]);   /* 字母d前为字母l */
+	   }
+	   FindMax(score, num, n, maxScore, maxNum); /* 按值调用函数 */
+	   printf("maxScore = %d, maxNum = %ld\n", maxScore, maxNum); 
+	   return 0;
+}
+/* 函数功能：计算最高分及其相应学生的学号 */
+void FindMax(int score[], long num[], int n, int pMaxScore, long pMaxNum)
+{ 
+	   int    i;
+	   pMaxScore = score[0];          	/* 假设score[0]为当前最高分 */
+	   pMaxNum = num[0];               	/* 记录当前最高分学生的学号num[0] */
+	   for (i=1; i<n; i++)             	/* 对所有score[i]进行比较 */
+	   {
+		   if (score[i] > pMaxScore)/* 如果score[i]高于当前最高分 */
+		   {  
+			   pMaxScore = score[i]; /* 用score[i]修改当前最高分 */
+			   pMaxNum = num[i];      /* 记录当前最高分学生的学号num[i] */
+		   } 
+	   } 
+}
+
+
+---------------------------------------------
+【例9.7】计算并输出最高分及相应学生的学号-正确
+----------------------------------------------
+#include  <stdio.h>
+#define  N  30
+void FindMax(int score[],long num[],int n,int *pMaxScore,long *pMaxNum);
+int main()
+{
+	int  score[N], maxScore;
+	int    n, i;
+	long   num[N], maxNum;
+	printf("How many students?");
+	scanf("%d", &n);    		                   /* 从键盘输入学生人数n */
+	printf("Input student's ID and score:\n");
+	for (i=0; i<n; i++)
+	{
+		scanf("%ld%d", &num[i], &score[i]);   /* 字母d前为字母l */
+	}
+	FindMax(score, num,n, &maxScore, &maxNum);/* 按地址调用函数 */
+	printf("maxScore = %d, maxNum = %ld\n", maxScore, maxNum);
+	return 0;
+}
+/* 函数功能：计算最高分及其相应学生的学号 */
+void FindMax(int score[],long num[],int n,int *pMaxScore,long *pMaxNum)
+{
+	int    i;
+	*pMaxScore = score[0];          	/* 假设score[0]为当前最高分 */
+	*pMaxNum = num[0];              	/* 记录score[0]的学号num[0] */
+	for (i=1; i<n; i++)             	/* 对所有score[i]进行比较 */
+	{
+		if (score[i] > *pMaxScore) 	/* 如果score[i]高于当前最高分 */
+		{
+			*pMaxScore = score[i]; 	/* 用score[i]修改当前最高分 */
+			*pMaxNum = num[i];     	/* 记录当前最高分学生的学号num[i] */
+		}
+	}
+}
+
+
+-------------------------------------------------------------
+函数型指针
+------------------------------------------
+#include <stdio.h>
+int per(int a,int b);
+int main()
+{
+    int iWidth,iLength,iResult;
+    printf("请输入长方形的长:\n");
+    scanf("%d",&iLength);
+    printf("请输入长方形的宽:\n");
+    scanf("%d",&iWidth);
+    iResult=per(iWidth,iLength);
+    printf("长方形的周长是:");
+    printf("%d\n",iResult);
+    return 0;
+}
+int per(int a,int b)
+{
+    return (a+b)*2;
+}
+
+-----------------------------------------------------
+#include <stdio.h>
+int *per(int a,int b);
+int c;
+int main()
+{
+    int iWidth,iLength;
+    int *Result;
+    printf("请输入长方形的长:\n");
+    scanf("%d",&iLength);
+    printf("请输入长方形的宽:\n");
+    scanf("%d",&iWidth);
+    Result=per(iWidth,iLength);
+    printf("长方形的周长是:");
+    printf("%d\n",*Result);
+    return 0;
+}
+int *per(int a,int b)
+{
+    int *p;
+    c=(a+b)*2;
+    p=&c;
+    return p;
+}
+
+-------------------------------------------------------
+函数指针-实现两个数据的和与差
+---------------------------------------------------------
+#include <stdio.h>
+int sum(int x, int y)								/*自定义函数sum*/
+{
+    return (x+y);
+}
+int sub(int x, int y)								/*自定义函数sub*/
+{
+    return(x-y);
+}
+void ss(int x, int y, int(*fun)())						/*自定义函数ss*/
+{
+    printf("%d\n", (*fun)(x,y));						/*取得函数入口*/
+}
+main()
+{
+    int a, b;
+    printf("Please input two integer numbers: \n");
+    scanf("%d,%d", &a, &b);						/*输入两个值*/
+    printf("sum = ");
+    ss(a, b, sum);								/*调用函数*/
+    printf("sub = ");
+    ss(a, b, sub);								/*调用函数*/
+    return 0;
+}
+
+------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+int sum(int a ,int b)
+{
+    return a+b;
+
+}
+int sub(int a ,int b)
+{
+    return a-b;
+
+}
+int main()
+{
+    int(*p)();
+    int a, b, m,n;
+    printf("Please input two integer numbers: \n");
+    scanf("%d,%d", &a, &b);
+    printf("1-Sum,2-Sub\n");
+    scanf("%d",&n);
+    if(n==1) p= sum; else  p=sub;
+    m = (*p)(a, b);
+    printf("Result:%d\n", m);
+    system("pause");
+    printf("\n");
+    return 0;
+}
+---------------------------------------------------------
+字符串复制
+--------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    char str1[]="合抱之木，生于毫末。",str2[30],*p1,*p2;
+    p1=str1;
+    p2=str2;
+    while(*p1!='\0')
+    {
+        *p2=*p1;
+        p1++;									/*指针移动*/
+        p2++;
+    }
+    *p2='\0'; 									/*在字符串的末尾加结束符*/
+    printf("现在第二个字符串的内容为:\n");
+    puts(str2); 									/*输出字符串*/
+    return 0;
+}
+
+--------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    char str1[]="合抱之木，生于毫末。",str2[30],*p1,*p2;
+    p1=str1;
+    p2=str2;
+    while(*p1!='\0')
+       *p2++=*p1++;
+    *p2='\0'; 									/*在字符串的末尾加结束符*/
+    printf("现在第二个字符串的内容为:\n");
+    puts(str2); 									/*输出字符串*/
+    return 0;
+}
+
+---------------------------------------------------------
+将字符串逐个输出
+-----------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int i;
+    char *str;
+    str="Hello";
+    for (i=0; str[i]!='\0'; i++)
+    {
+	  putchar(str[i]);
+    }
+    putchar('\n');
+								/*输出字符串*/
+    system("pause");
+    return 0;
+}
+-----------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    int i;
+    char *str;
+    str="Hello";
+    printf("%d",strlen(str));
+    for (i=0; i<strlen(str); i++)
+    {
+	  putchar(str[i]);
+    }
+    putchar('\n');
+								/*输出字符串*/
+    system("pause");
+    return 0;
+}
+-------------------------------------------------------------
+字符串输入 *能不能输入带空格字符串？
+-----------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    char str[10];
+    printf("Input String:");
+    scanf("%s",str);
+    printf("%s\n",str);
+								/*输出字符串*/
+    system("pause");
+    return 0;
+}
+----------------------------------------------
+错误字符串输入方法
+----------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    char *str="hello";
+    printf("Input String:");
+    scanf("%s",str);
+    printf("%s\n",str);
+								/*输出字符串*/
+    system("pause");
+    return 0;
+}
+------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#define N 12
+int main()
+{
+	char  name[N];
+	char  *ptrName = name;  /* 声明了一个指向数组name的字符指针ptrName */
+	printf("Enter your name(maximum 12 characters):");
+	gets(ptrName);           /* 输入字符串存入字符指针ptrName所指向的内存 */
+    printf("Hello %s!\n", ptrName);
+	return 0;
+}
+
+-----------------------------------------------------
+#include <stdio.h>
+#define N 12
+int main()
+{
+	char  name[N];
+	printf("Enter your name(maximum 12 characters):");
+    fgets(name, sizeof(name)+1, stdin); /* 限制输入字符串长度不超过数组大小 */
+    printf("Hello %s!\n",name);
+	return 0;
+}
+------------------------------------------------------------------------
+字符串复制
+----------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char a[80],b[80];
+    int i;
+    printf("输入一个字符串:");
+    gets(a);
+    for(i=0;a[i]!='\0';i++)
+        b[i]=a[i];
+    b[i]='\0';
+    puts(b);
+    return 0;
+}
+-----------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char a[80],b[80];
+    printf("输入一个字符串:");
+    gets(a);
+    strcpy(b,a);
+    puts(b);
+    return 0;
+}
+------------------------------------------------
+自编字符串连接函数
+--------------------------------------------------
+#include<stdio.h>
+char* str_cat(char* ch1,char* ch2);
+int main()
+{
+    char str1[100],str2[100];
+    printf("请输入一个字符串:\n");
+    gets(str1);
+    printf("请输入另一个字符串:\n");
+    gets(str2);
+    printf("拼接后的字符串是:%s\n",str_cat(str1,str2));
+    return 0;
+}
+
+char* str_cat(char* ch1,char* ch2)
+{
+    char* str=ch1;
+    int i=0;
+    while(*ch1)               /*同   *ch1!='\0'  */
+    {
+        str[i]=*ch1;
+        i++;
+        ch1++;
+    }
+    while(*ch2)
+    {
+        str[i]=*ch2;
+        i++;
+        ch2++;
+    }
+    str[i]='\0';
+    return str;
+}
+
+--------------------------------------------------------------------
+【例10.4】按奥运会参赛国国名在字典中的顺序对其入场次序进行排序
+--------------------------------------------------------------------
+#include  <stdio.h>
+#include  <string.h>
+#define   MAX_LEN  10                		/* 字符串最大长度 */
+#define   N         150                		/* 字符串个数 */
+void SortString(char str[][MAX_LEN], int n);
+int main()
+{
+	int    i, n;
+	char   name[N][MAX_LEN];                /* 定义二维字符数组 */
+	printf("How many countries?");
+	scanf("%d",&n);
+	getchar();                                /* 读走输入缓冲区中的回车符 */
+	printf("Input their names:\n");
+	for (i=0; i<n; i++)
+	{
+		gets(name[i]);                       	/* 输入n个字符串 */
+	}
+	SortString(name, n);                    /* 字符串按字典顺序排序 */
+	printf("Sorted results:\n");
+	for (i=0; i<n; i++)
+	{
+		puts(name[i]);                      /* 输出排序后的n个字符串 */
+	}
+	return 0;
+}
+/* 函数功能：交换法实现字符串按字典顺序排序 */
+void SortString(char str[][MAX_LEN], int n)
+{
+	int    i, j;
+	char  temp[MAX_LEN];
+	for (i=0; i<n-1; i++)
+	{
+		for (j = i+1; j<n; j++)
+		{
+			if (strcmp(str[j], str[i]) < 0)
+			{
+				strcpy(temp,str[i]);
+				strcpy(str[i],str[j]);
+				strcpy(str[j],temp);
+			}
+		}
+	}
+}
+
+------------------------------------------------------
+例10.5 ：字符串复制  ——用字符数组编程
+----------------------------------------------------
+#include  <stdio.h>
+#define N 80
+void  MyStrcpy(char dstStr[], char srcStr[]);
+int main()
+{
+	char  a[N], b[N];
+	printf("Input a string:");
+	gets(a);                      /* 输入字符串 */
+	MyStrcpy(b, a);              /* 将字符数组a中的字符串拷贝到b中 */
+	printf("The copy is:");
+	puts(b);                       /* 输出复制后的字符串 */
+	return 0;
+}
+/* 函数功能：用字符数组作为函数参数，字符串拷贝 */
+void  MyStrcpy(char dstStr[], char srcStr[])
+{
+	int  i = 0;                   /* 数组下标初始化为0 */
+	while (srcStr[i] != '\0')  /* 若当前取出的字符不是字符串结束标志 */
+	{
+		dstStr[i] = srcStr[i];/* 复制字符 */
+		i++;                      /* 移动下标 */
+	}
+	dstStr[i] = '\0';            /* 在字符串dstStr的末尾添加字符串结束标志 */
+}
+
+-----------------------------------------------
+例10.5 ：字符串复制 ——用字符指针编程
+---------------------------------------------------
+#include  <stdio.h>
+#define N 80
+void  MyStrcpy(char dstStr[], char srcStr[]);
+int main()
+{
+	char  a[N], b[N];
+	printf("Input a string:");
+	gets(a);                      /* 输入字符串 */
+	MyStrcpy(b, a);              /* 将字符数组a中的字符串拷贝到b中 */
+	printf("The copy is:");
+	puts(b);                       /* 输出复制后的字符串 */
+	return 0;
+}
+/* 函数功能：用字符指针作为函数参数，实现字符串拷贝 */
+void  MyStrcpy(char *dstStr, char *srcStr)
+{
+	while (*srcStr != '\0')	/* 若当前srcStr所指字符不是字符串结束标志 */
+	{
+		*dstStr = *srcStr; 	/* 复制字符 */
+		srcStr++;            	/* 使srcStr指向下一个字符 */
+		dstStr++;            	/* 使dstStr指向下一个存储单元 */
+	}
+	*dstStr = '\0';         	/* 在字符串dstStr的末尾添加字符串结束标志 */
+}
+
+--------------------------------------------------------
+结构体
+--------------------------------------
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    struct Student								/*学生结构*/
+    {
+        char cName[20];							/*姓名*/
+        int  iNumber;							/*学号*/
+        char cSex[3];							/*性别*/
+        int iGrade;								/*年级*/
+    };
+    				
+    struct Student student;							/*定义结构体类型指针*/
+    strcpy(student.cName,"xuan");
+    student.iNumber=1112;
+    strcpy(student.cSex,"Man");
+    student.iGrade=90;					/*指针指向结构体变量*/
+    printf("-----学生信息-----\n");					/*消息提示*/
+    printf("姓名: %s\n",student.cName);				/*使用指针引用变量中的成员*/
+    printf("学号: %d\n",student.iNumber);
+    printf("性别: %s\n",student.cSex);
+    printf("年级: %d\n",student.iGrade);
+    return 0;
+}
+---------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    struct Student								/*学生结构*/
+    {
+        char cName[20];							/*姓名*/
+        int  iNumber;							/*学号*/
+        char cSex[3];							/*性别*/
+        int iGrade;								/*年级*/
+    };
+    				/*对结构变量进行初始化*/
+    struct Student student;							/*定义结构体类型指针*/
+    printf("Input Name:\n");
+    scanf("%s",student.cName);
+    printf("Input Number:\n");
+    scanf("%d",&student.iNumber);
+    printf("Input Sex:\n");
+    scanf("%s",student.cSex);
+    printf("Input Grade:\n");
+    scanf("%d",&student.iGrade);
+
+    printf("-----学生信息-----\n");					/*消息提示*/
+    printf("姓名: %s\n",student.cName);				/*使用指针引用变量中的成员*/
+    printf("学号: %d\n",student.iNumber);
+    printf("性别: %s\n",student.cSex);
+    printf("年级: %d\n",student.iGrade);
+    return 0;
+}
+-----------------------------------------------------
+结构体数组
+---------------------------------------------------
+#include<stdio.h>
+struct Student										/*学生结构*/
+{
+    char cName[20];									/*姓名*/
+    int  iNumber;									/*学号*/
+    char cSex[3];									/*性别*/
+    int iGrade;										/*年级*/
+} student[5]={{"王红玉",12062212, "男",3},
+            {"孙佳",12062213, "女",3},
+            {"张海波",12062214, "女",3},
+            {"李仕平",12062215, "男",3},
+            {"王雪",12062216, "女",3}};					/*定义数组并设置初始值*/
+int main()
+{
+    int i;											/*循环控制变量*/
+    for(i=0;i<5;i++)									/*使用for进行5次循环*/
+    {
+        printf("第%d个学生:\n",i+1);						/*首先输出学生的名次*/
+        /*使用变量i做下标，输出数组中的元素数据*/
+        printf("姓名: %s, 学号: %d\n",student[i].cName,student[i].iNumber);
+        printf("性别: %s, 年级: %d\n",student[i].cSex,student[i].iGrade);
+        printf("\n");									/*空格行*/
+    }
+    return 0;
+}
+--------------------------------------------------------------------------------
+结构体指针
+--------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+    struct Student								/*学生结构*/
+    {
+        char cName[20];							/*姓名*/
+        int  iNumber;							/*学号*/
+        char cSex[3];							/*性别*/
+        int iGrade;								/*年级*/
+    }student={"孙佳",12061212,"女",2};				/*对结构变量进行初始化*/
+    struct Student* pStruct;							/*定义结构体类型指针*/
+    pStruct=&student;							/*指针指向结构体变量*/
+    printf("-----学生信息-----\n");					/*消息提示*/
+    printf("姓名: %s\n",(*pStruct).cName);				/*使用指针引用变量中的成员*/
+    printf("学号: %d\n",(*pStruct).iNumber);
+    printf("性别: %s\n",(*pStruct).cSex);
+    printf("年级: %d\n",(*pStruct).iGrade);
+    return 0;
+}
+--------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+    struct Student								/*学生结构*/
+    {
+        char cName[20];							/*姓名*/
+        int  iNumber;							/*学号*/
+        char cSex[3];							/*性别*/
+        int iGrade;								/*年级*/
+    }student={"孙佳",12061212,"女",2};				/*对结构变量进行初始化*/
+    struct Student* pStruct;							/*定义结构体类型指针*/
+    pStruct=&student;							/*指针指向结构体变量*/
+    printf("-----学生信息-----\n");					/*消息提示*/
+    printf("姓名: %s\n",(*pStruct).cName);				/*使用指针引用变量中的成员*/
+    printf("学号: %d\n",student.iNumber);
+    printf("性别: %s\n",pStruct->cSex);
+    printf("年级: %d\n",(*pStruct).iGrade);
+    return 0;
+}
+----------------------------------------------------------
+结构体数组指针
+-----------------------------------------------------------
+#include<stdio.h>
+struct Student									/*学生结构*/
+{
+    char cName[20];								/*姓名*/
+    int  iNumber;								/*学号*/
+    char cSex[3];								/*性别*/
+    int iGrade;									/*年级*/
+} student[5]={{"王红玉",12062212, "男",3},
+            {"孙佳",12062213, "女",3},
+            {"张海波",12062214, "女",3},
+            {"李仕平",12062215, "男",3},
+            {"王雪",12062216, "女",3}};				/*定义数组并设置初始值*/
+int main()
+{
+    struct Student* pStruct;
+    int index;
+    pStruct=student;
+    for(index=0;index<5;index++,pStruct++)
+    {
+        printf("第%d个学生:\n",index+1);				/*首先输出学生的名次*/
+        /*使用变量index做下标，输出数组中的元素数据*/
+        printf("姓名: %s, 学号: %d\n",pStruct->cName,pStruct->iNumber);
+        printf("性别: %s, 年级: %d\n",pStruct->cSex,pStruct->iGrade);
+        printf("\n");								/*空格行*/
+    }
+    return 0;
+}
+
+-------------------------------------------------------
+链表
+---------------------------------------------------------
+#include<stdio.h>
+#include<stdlib.h>
+struct Student
+{
+    char cName[20];							/*姓名*/
+    int iNumber;								/*学号*/
+    struct Student* pNext;						/*指向下一个结点的指针*/
+};
+int iCount;									/*全局变量表示链表长度*/
+struct Student* Create()
+{
+    struct Student* pHead=NULL;				/*初始化链表头指针为空*/
+    struct Student* pEnd,*pNew;
+    iCount=0;								/*初始化链表长度*/
+    pEnd=pNew=(struct Student*)malloc(sizeof(struct Student));
+    printf("首先输入姓名,然后输入学号\n");
+    scanf("%s",pNew->cName);
+    scanf("%d",&pNew->iNumber);
+    while(pNew->iNumber!=0)
+    {
+        iCount++;
+        if(iCount==1)
+        {
+            pNew->pNext=pHead;				/*使得指向为空*/
+            pEnd=pNew;						/*跟踪新加入的结点*/
+            pHead=pNew;						/*头指针指向首结点*/
+        }
+        else
+        {
+            pNew->pNext=NULL;				/*新结点的指针为空*/
+            pEnd->pNext=pNew;				/*原来的为结点指向新结点*/
+            pEnd=pNew;						/*pEnd指向新结点*/
+        }
+        pNew=(struct Student*)malloc(sizeof(struct Student));	/*再次分配结点内存空间*/
+        scanf("%s",pNew->cName);
+        scanf("%d",&pNew->iNumber);
+    }
+    free(pNew);								/*释放没有用到的空间*/
+    return pHead;
+}
+void Print(struct Student* pHead)
+{
+    struct Student *pTemp;						/*循环所用的临时指针*/
+    int iIndex=1;								/*表示链表中结点的序号*/
+
+    printf("----这个链表中有%d个成员:----\n",iCount);		/*消息提示*/
+    printf("\n");								/*换行*/
+    pTemp=pHead;							/*指针得到首结点的地址*/
+
+    while(pTemp!=NULL)
+    {
+        printf("成员%d是:\n",iIndex);
+        printf("姓名: %s\n",pTemp->cName);	/*输出姓名*/
+        printf("学号: %d\n",pTemp->iNumber);	/*输出学号*/
+        printf("\n");							/*输出换行*/
+        pTemp=pTemp->pNext;					/*移动临时指针到下一个结点*/
+        iIndex++;								/*进行自加运算*/
+    }
+}
+int main()
+{
+    struct Student* pHead;						/*定义头结点*/
+    pHead=Create();							/*创建结点*/
+    Print(pHead);								/*输出链表*/
+    return 0;									/*程序结束*/
+}
+
+---------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+struct Student									/*学生结构*/
+{
+    char cName[20];								/*姓名*/
+    int  iNumber;								/*学号*/
+    char cSex[3];								/*性别*/
+    int iGrade[2];									/*年级*/
+} ;
+int main()
+{
+
+    struct Student stu1={"王红玉",12062212, "男",{3,6}};           /*整数数组赋值*/
+    printf("%d\n",sizeof(stu1));
+    printf("%s\n",stu1.cName);
+    return 0;
+}
+--------------------------------------------------------------
+#include  <stdio.h>
+typedef struct date     
+{
+	int   year;
+	int   month;
+	int   day;
+}DATE;
+typedef struct student
+{
+	long  studentID;			/* 学号 */
+	char  studentName[10];	     /* 姓名 */
+	char  studentSex;			/* 性别 */
+	DATE  birthday;			     /* 出生日期 */
+	int	score[4];		         /* 4门课程的成绩 */
+}STUDENT;
+int main()
+{
+	int i, j, sum[30];
+	STUDENT stu[30] = {{100310121,"王刚",'M',{1991,5,19},{72,83,90,82}},
+	{100310122,"李小明",'M',{1992,8,20},{88,92,78,78}},
+	{100310123,"王丽红",'F',{1991,9,19},{98,72,89,66}},
+	{100310124,"陈莉莉",'F',{1992,3,22},{87,95,78,90}}
+	};
+	for (i=0; i<4; i++)
+	{
+		sum[i] = 0;
+		for (j=0; j<4; j++)
+		{
+			sum[i] = sum[i] + stu[i].score[j];
+		}
+		printf("%10ld%8s%3c%6d/%02d/%02d%4d%4d%4d%4d%6.1f\n", 
+			stu[i].studentID, 
+			stu[i].studentName,
+			stu[i].studentSex,
+			stu[i].birthday.year,
+			stu[i].birthday.month,
+			stu[i].birthday.day,
+			stu[i].score[0],
+			stu[i].score[1],
+			stu[i].score[2],
+			stu[i].score[3],    
+			sum[i]/4.0);
+	}
+	return 0;
+}
+---------------------------------------------------------------------------
+12-1演示结构体变量的赋值和引用方法
+--------------------------------------------------------------------------
+#include  <stdio.h>
+typedef struct date
+{
+	int   year;
+	int   month;
+	int   day;
+}DATE;
+typedef struct student
+{
+	long  studentID;			    /* 学号 */
+	char  studentName[10];	    /* 姓名 */
+	char  studentSex;			    /* 性别 */
+	DATE  birthday;			    /* 出生日期 */
+	int	score[4];		         /* 4门课程的成绩 */
+}STUDENT;
+int main()
+{
+	STUDENT stu1 = {100310121, "王刚", 'M', {1991,5,19}, {72,83,90,82}};
+	STUDENT stu2;
+	stu2 = stu1;                     /* 同类型的结构体变量之间的赋值操作 */
+	printf("stu2:%10ld%8s%3c%6d/%02d/%02d%4d%4d%4d%4d\n",
+		stu2.studentID, stu2.studentName, stu2.studentSex,
+		stu2.birthday.year, stu2.birthday.month, stu2.birthday.day,
+		stu2.score[0], stu2.score[1], stu2.score[2], stu2.score[3]);
+	return 0;
+}
+
+-------------------------------------------------------------------
+12-1-2
+----------------------------------------------------------------
+#include  <stdio.h>
+typedef struct date     
+{
+	int   year;
+	int   month;
+	int   day;
+}DATE;
+typedef struct student
+{
+	long  studentID;			    /* 学号 */
+	char  studentName[10];	    /* 姓名 */
+	char  studentSex;			    /* 性别 */
+	DATE  birthday;			    /* 出生日期 */
+	int	score[4];		         /* 4门课程的成绩 */
+}STUDENT;
+int main()
+{
+	STUDENT stu1, stu2;
+	int i;
+	printf("Input a record:\n");
+	scanf("%ld", &stu1.studentID);
+	scanf("%s", stu1.studentName);  /* 输入学生姓名，无需加& */
+	scanf(" %c", &stu1.studentSex); /* %c前有一个空格 */
+	scanf("%d", &stu1.birthday.year);
+	scanf("%d", &stu1.birthday.month);
+	scanf("%d", &stu1.birthday.day);
+	for (i=0; i<4; i++)
+	{
+		scanf("%d", &stu1.score[i]);
+	}
+	stu2 = stu1;                       /* 同类型的结构体变量之间的赋值操作 */ 
+	printf("&stu2 = %p\n", &stu2); /* 打印结构体变量stu2的地址 */
+	printf("%10ld%8s%3c%6d/%02d/%02d%4d%4d%4d%4d\n", 
+		stu2.studentID, stu2.studentName, stu2.studentSex, 
+		stu2.birthday.year, stu2.birthday.month, stu2.birthday.day,
+		stu2.score[0], stu2.score[1], stu2.score[2], stu2.score[3]);    
+	return 0;
+}
+-------------------------------------------------------
